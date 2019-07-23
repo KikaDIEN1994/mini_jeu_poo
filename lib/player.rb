@@ -36,4 +36,62 @@ class Player
 
 
 end
+
+class HumanPlayer < Player #class HumanPlayer qui hérite de la classe Player 
+    attr_accessor :weapon_level
+
+    def initialize #Nouvelle valeur d'initialisation
+        @name=name
+        @life_points=100
+        @weapon_level=1
+    end
+
+    def show_state #Nouvelle valeur PV
+        puts "#{self.@name} a #{self.@life_points} points de vie et une arme de niveau #{@weapon_level}"
+    end
+
+    def compute_damage# nouvelle valeur de damage
+        rand(1..6)*@weapon_level
+    end
+
+    def search_weapon#nouvelle attribution de weapon
+        lvl=rand(1..6)
+        puts "Tu as trouvé une arme de niveau #{lvl}"
+        if @weapon_level<lvl
+        @weapon_level=lvl
+        puts "Selection de la nouvelle arme"
+        else
+        puts "Pas terrible tu garde l'ancienne"
+        end
+    end
+
+    def search_health_pack#pack de soin
+        health=rand(1..6) 
+
+        if health == 1
+          puts "Tu n'as rien trouvé ..."
+          
+        elsif health.between?(2,5)
+            puts "Bravo, tu as trouvé un pack de +50 points de vie !"
+            
+            if @life_points + 50 > 100
+                @life_points = 100
+                
+            else
+                @life_points += 50
+            end
+            
+        elsif result == 6
+            health "Waow, tu as trouvé un pack de +80 points de vie !"
+            
+            if @life_points + 80 > 100
+                @life_points = 100
+                
+            else
+                @life_points += 80
+            end
+        end   
+        end
+    end
+end
 #binding.pry
