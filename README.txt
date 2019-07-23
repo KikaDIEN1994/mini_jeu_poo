@@ -1,0 +1,1 @@
+Les commentaires ont été rédigé pour chaque méthode indiquant leurs rôle, mon éditeur de texte ne prenant pas en compte les accents, j'ai pris la liberté de noté Jose au lieu de José.
