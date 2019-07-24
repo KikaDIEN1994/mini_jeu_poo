@@ -18,13 +18,13 @@ class Player
          if @life_points<= 0 # Si point de vie et <= à 0 alors affiché qu'il est mort
             puts "le joueur #{@name} à été tué"
         end
-        new_dmg=@life_points
+        new_dmg = @life_points
         return new_dmg
     end
 
     def attacks(player)# déclare qui attaque qui et affiche les dégas reçu
         puts "#{self.name} attaque #{player.name}"
-        damage=compute_damage
+        damage = compute_damage
         player.gets_damage(damage)
 		puts "#{self.name} lui inflige #{damage} points de dommages"
         
@@ -41,13 +41,13 @@ class HumanPlayer < Player #class HumanPlayer qui hérite de la classe Player
     attr_accessor :weapon_level
 
     def initialize #Nouvelle valeur d'initialisation
-        @name=name
-        @life_points=100
-        @weapon_level=1
+        @name = name
+        @life_points = 100
+        @weapon_level = 1
     end
 
     def show_state #Nouvelle valeur PV
-        puts "#{self.@name} a #{self.@life_points} points de vie et une arme de niveau #{@weapon_level}"
+        puts "#{@name} a #{@life_points} points de vie et une arme de niveau #{@weapon_level}"
     end
 
     def compute_damage# nouvelle valeur de damage
@@ -91,7 +91,7 @@ class HumanPlayer < Player #class HumanPlayer qui hérite de la classe Player
                 @life_points += 80
             end
         end   
-        end
+        
     end
 end
 #binding.pry

@@ -9,7 +9,6 @@ player1 = Player.new("josiane")
 player2 = Player.new("jose")
 
 while player1.life_points > 0 && player2.life_points > 0 # condition du combat a mort
-    while player1.life_points > 0 && player2.life_points > 0
         puts
         
 		puts "Voici l'état de chaque joueurs : "
